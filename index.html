@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- bootsrap link for design -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css"
+/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  </head>
+  <body>
+    <!-- Title of the system  -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="alert alert-primary text-center">
+                    Bio-Data
+                </h1>
+            </div>
+             <!-- form design -->
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+
+                        <form id="form">
+                            <input type="hidden" name="id" id="inputId">
+                            <label for="inputLastName">Last Name</label>
+                            <input type="text" placeholder="Last Name" class="form-control" id="inputLastName" required>
+                            <br>
+                            <label for="inputFirstName">First Name</label>
+                            <input type="text" placeholder="First Name" class="form-control" id="inputFirstName" required>
+                            <br>
+                            <label for="inputMiddleName">Middle Name</label>
+                            <input type="text" placeholder="Middle Name" class="form-control" id="inputMiddleName" required>
+                            <br>
+                            <label for="inputBirthdate">Birthdate</label>
+                            <input type="date" placeholder="Birthdate" class="form-control" id="inputBirthdate" required>
+                            <br>
+                            <label for="inputGender">Gender</label>
+                            <input type="text" placeholder="Male / Female" class="form-control" id="inputGender" required>
+                            <br>
+                            <label for="inputNationality">Nationality</label>
+                            <input type="text" placeholder="Nationality" class="form-control" id="inputNationality" required>
+                            <br>
+                            <label for="inputCivilStatus">Civil Status</label>
+                            <input type="text" placeholder="Civil Status" class="form-control" id="inputCivilStatus" required>
+                            <br>
+                            
+                            <br>
+                            <br>
+                            <button class="btn btn-sm btn-primary" type="button" onclick="save()">Save</button>
+                            <button class="btn btn-sm btn-primary" type="button" onclick="clearData()">Reset</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- table design for Saved Data -->
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                      <h2>Saved Data</h2>
+                        <div class="table-responsive">
+                            <table id="datatable" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Last Name</th>
+                                        <th>First Name</th>
+                                        <th>Middle Name</th>
+                                        <th>Birthdate</th>
+                                        <th>Gender</th>
+                                        <th>Nationality</th>
+                                        <th>Civil Status</th>    
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="table">
+       
+                                </tbody>
+                            </table>
+                        </div><hr>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- link for the design -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+    <!-- script for fetching data -->
+    <script>
+       allData()
+    </script>
+    <!-- script for resetting the form -->
+    <script>
+        function clearData(){
+            document.getElementById('form').reset()
+            document.getElementById('id').value = ""
+        }
+    </script>
+  </body>
+</html>
